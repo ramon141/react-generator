@@ -25,6 +25,10 @@ def save_list_page(html, model: Model):
     save_source(html, "{}/src/views/List{}.js".format(Log.get_web_path(), model.get_name().capitalize()))
 
 
+def save_sidebar(html):
+    save_source(html, "{}/src/_nav.js".format(Log.get_web_path()))
+    
+
 def save_source(content, save_on):
     with open(save_on, 'w') as f:
         f.write(content)

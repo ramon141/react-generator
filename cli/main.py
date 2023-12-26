@@ -9,7 +9,9 @@ def init():
     os.system('cls' if os.name == 'nt' else 'clear')
     if Log.app_not_initialized():
         cmd.init(get_app_name())
-    init()
+        os.system('cls' if os.name == 'nt' else 'clear')
+        
+    main_cli()
 
 
 def main_cli():

@@ -29,7 +29,7 @@ def datasource():
 
 
 def model(model: Model) -> Model:
-    json_cmd = model.to_json()
+    json_cmd = json.dumps(model.to_dict())
     Log.add_model(model)
 
     create_cmd = "cd {}-api; lb4 model --config '{}' -y".format(Log.get_app_name(), json_cmd)

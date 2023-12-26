@@ -7,9 +7,23 @@ class Log:
     logger = None
  
     def load():
-        with open (os.getcwd() + '/config.json', "r") as f:
-            Log.logger = json.loads(f.read())
+        if os.path.exists(os.getcwd() + '/config.json'):
+            with open (os.getcwd() + '/config.json', "r") as f:
+                Log.logger = json.loads(f.read())
+        else:
+            Log.create_file()
+        
 
+    def create_file():
+        Log.logger = {
+            "datasource": "",
+            "path": "",
+            "app_name": "",
+            "auth": {},
+            "models": []
+        }
+        with open('config.json', 'w', encoding='utf-8') as f:
+            json.dump(Log.logger, f, ensure_ascii=False, indent=4)
 
     def set_permissions(permissions):
         Log.write_file("permissions", permissions)
@@ -61,7 +75,7 @@ class Log:
         return Log.logger["app_name"]
     
     def add_model(model: Model):
-        Log.logger["models"].append(model.to_json())
+        Log.logger["models"].append(model.to_dict())
         Log.write_file("models", Log.logger["models"])
 
     def write_file(key, value):

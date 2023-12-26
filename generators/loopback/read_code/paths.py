@@ -13,7 +13,7 @@ def controller_files():
 
 
 def get_path_from_code(code):
-    regex = r"@(post|get|patch|delete|put)\('(\/[\w\/{}]+)'\)"
+    regex = r"@(post|get|patch|del|put)\('(\/[\w\/{}]+)'\)"
     paths = []
     matches = re.finditer(regex, code, re.MULTILINE)
 

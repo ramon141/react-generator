@@ -40,12 +40,12 @@ class Model:
     def get_base(self):
         return self.base
 
-    def to_json(self):
-        return json.dumps({
+    def to_dict(self):
+        return {
             "name": self.name,
             "base": self.base,
             "properties": {name: prop.to_dict() for name, prop in self.properties.items()}
-        }, indent=4)
+        }
 
     @staticmethod
     def from_json(json_data):

@@ -3,7 +3,7 @@ from .code_generator.create.register import create_page
 from .code_generator.create.config_routes import create_route
 from .code_generator.create.list import page_list
 from .code_generator.create.api import create_api
-import shutil
+from .code_generator.create.sidebar import create_sidebar
 import subprocess
 from generators.utils.copy import copy_tree
 
@@ -12,6 +12,7 @@ def rest(model):
     save_list_page(page_list(model), model)
     save_api(create_api(model), model)
     save_routes(create_route(model))
+    save_sidebar(create_sidebar(model))
 
 
 def create_react_app():
