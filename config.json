@@ -1,0 +1,19 @@
+{
+    "datasource": "Postgres",
+    "path": "/home/ramon/my_projects/create_crud/netflix",
+    "app_name": "netflix",
+    "auth": {
+        "type": "Criar autorização simples",
+        "profiles": []
+    },
+    "models": [
+        "{\n    \"name\": \"Filme\",\n    \"base\": \"Entity\",\n    \"properties\": {\n        \"id\": {\n            \"type\": \"number\",\n            \"id\": true,\n            \"required\": false,\n            \"generated\": true\n        },\n        \"nome\": {\n            \"type\": \"string\",\n            \"id\": false,\n            \"required\": true,\n            \"generated\": null\n        }\n    }\n}",
+        "{\n    \"name\": \"Filme\",\n    \"base\": \"Entity\",\n    \"properties\": {\n        \"id\": {\n            \"type\": \"number\",\n            \"id\": true,\n            \"required\": false,\n            \"generated\": true\n        },\n        \"nome\": {\n            \"type\": \"string\",\n            \"id\": false,\n            \"required\": true,\n            \"generated\": null\n        }\n    }\n}",
+        "{\n    \"name\": \"Serie\",\n    \"base\": \"Entity\",\n    \"properties\": {\n        \"id\": {\n            \"type\": \"number\",\n            \"id\": true,\n            \"required\": false,\n            \"generated\": true\n        },\n        \"nome\": {\n            \"type\": \"string\",\n            \"id\": false,\n            \"required\": true,\n            \"generated\": null\n        }\n    }\n}",
+        "{\n    \"name\": \"Serie\",\n    \"base\": \"Entity\",\n    \"properties\": {\n        \"id\": {\n            \"type\": \"number\",\n            \"id\": true,\n            \"required\": false,\n            \"generated\": true\n        },\n        \"nome\": {\n            \"type\": \"string\",\n            \"id\": false,\n            \"required\": true,\n            \"generated\": null\n        }\n    }\n}",
+        "{\n    \"name\": \"Serie2\",\n    \"base\": \"Entity\",\n    \"properties\": {\n        \"id\": {\n            \"type\": \"number\",\n            \"id\": true,\n            \"required\": false,\n            \"generated\": true\n        },\n        \"nome\": {\n            \"type\": \"string\",\n            \"id\": false,\n            \"required\": true,\n            \"generated\": null\n        }\n    }\n}",
+        "{\n    \"name\": \"Serie2\",\n    \"base\": \"Entity\",\n    \"properties\": {\n        \"id\": {\n            \"type\": \"number\",\n            \"id\": true,\n            \"required\": false,\n            \"generated\": true\n        },\n        \"nome\": {\n            \"type\": \"string\",\n            \"id\": false,\n            \"required\": true,\n            \"generated\": null\n        }\n    }\n}",
+        "{\n    \"name\": \"Filme\",\n    \"base\": \"Entity\",\n    \"properties\": {\n        \"id\": {\n            \"type\": \"number\",\n            \"id\": true,\n            \"required\": false,\n            \"generated\": true\n        },\n        \"nome\": {\n            \"type\": \"string\",\n            \"id\": false,\n            \"required\": true,\n            \"generated\": null\n        }\n    }\n}",
+        "{\n    \"name\": \"Filme\",\n    \"base\": \"Entity\",\n    \"properties\": {\n        \"id\": {\n            \"type\": \"number\",\n            \"id\": true,\n            \"required\": false,\n            \"generated\": true\n        },\n        \"nome\": {\n            \"type\": \"string\",\n            \"id\": false,\n            \"required\": true,\n            \"generated\": null\n        }\n    }\n}"
+    ]
+}
