@@ -90,6 +90,78 @@
                     "generated": true
                 }
             }
+        },
+        {
+            "name": "Filme",
+            "base": "Entity",
+            "properties": {
+                "id": {
+                    "type": "number",
+                    "id": true,
+                    "required": false,
+                    "generated": true
+                },
+                "nome": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                },
+                "poster": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                },
+                "nota": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                },
+                "sinopse": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                }
+            }
+        },
+        {
+            "name": "Filme",
+            "base": "Entity",
+            "properties": {
+                "id": {
+                    "type": "number",
+                    "id": true,
+                    "required": false,
+                    "generated": true
+                },
+                "nome": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                },
+                "poster": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                },
+                "nota": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                },
+                "sinopse": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                }
+            }
         }
     ]
 }

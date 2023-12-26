@@ -7,21 +7,21 @@ def create_api(model: Model):
 import api from "./axios";
 
 async function post(data) {
-    return api.post('/""" + path[0]['url'] + """', data);
+    return api.post('""" + path[0]['url'] + """', data);
 }
 
 function get(id = false) {
     if (id)
-        return api.get(`/""" + path[4]['url'] + """/${id}`);
-    return api.get('/""" + path[2]['url'] + """');
+        return api.get(`""" + path[4]['url'].replace('{id}/', '') + """/${id}`);
+    return api.get('""" + path[2]['url'] + """');
 }
 
 async function put(id, data) {
-    return api.put(`/""" + path[3]['url'] + """/${id}`, data);
+    return api.put(`""" + path[3]['url'] + """/${id}`, data);
 }
 
 function del(id) {
-    return api.delete(`/""" + path[6]['url'] + """/${id}`);
+    return api.delete(`""" + path[6]['url'].replace('{id}/', '') + """/${id}`);
 }
 
 export const """ + model.get_name().capitalize() + """API = {

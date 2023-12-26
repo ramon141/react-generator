@@ -24,8 +24,9 @@ def create_page(model: Model):
         if value["name"] != "id":
             fields += """
                 <CCol md={6}>
-                    <CFormLabel htmlFor=\"""" + value["name"] + """\">""" + value["name"] + ("<Asterix />" if value["required"] else "") + """</CFormLabel>
+                    <CFormLabel htmlFor=\"""" + value["name"] + """\">""" + value["name"].capitalize() + ("<Asterix />" if value["required"] else "") + """</CFormLabel>
                     <CFormInput
+                        id=\"""" + value["name"] + """\"
                         type=\"""" + value["type"] + """\"
                         required={""" + str(value["required"]).lower() + """}
                         onChange={(e) => set""" + value["name"].capitalize() + """(e.target.value)}

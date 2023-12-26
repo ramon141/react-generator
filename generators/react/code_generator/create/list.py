@@ -93,7 +93,7 @@ const List""" + model_name + """ = () => {
                     <CCardHeader>
                         <strong>Listagem de """ + model_name + """</strong>
                         <br />
-                        <small>Aqui estão listadas todos os """ + model_name + """ cadastrados no sistema</small>
+                        <small>Aqui estão listadas todos(as) os(as) """ + model_name.lower() + """s cadastrados no sistema</small>
                     </CCardHeader>
                     <CCardBody>
                         <Table
