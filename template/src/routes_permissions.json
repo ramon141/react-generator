@@ -1,0 +1,147 @@
+{
+    "all-users": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE",
+        "DOCENTE"
+    ],
+    "/": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE",
+        "DOCENTE"
+    ],
+    "/dashboard": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE"
+    ],
+    "/indication-register": [
+        "COORDENADOR"
+    ],
+    "/indication-list": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE",
+        "DOCENTE"
+    ],
+    "/indication-accept": [
+        "COORDENADOR"
+    ],
+    "/my-accept-indications": [
+        "COORDENADOR"
+    ],
+    "/indication-edit/:id": [
+        "COORDENADOR"
+    ],
+    "/pre-offer-register": [
+        "COORDENADOR"
+    ],
+    "/pre-offer-list": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE",
+        "DOCENTE"
+    ],
+    "/pre-offer-edit/:id": [
+        "COORDENADOR"
+    ],
+    "/pre-offer-unity": [
+        "COORDENADOR",
+        "DIRETOR"
+    ],
+    "/period-register": [
+        "DIAVE"
+    ],
+    "/period-list": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE",
+        "DOCENTE"
+    ],
+    "/period-edit/:id": [
+        "ADMIN",
+        "COORDENADOR"
+    ],
+    "/user-register": [
+        "DIAVE"
+    ],
+    "/user-list": [
+        "DIAVE"
+    ],
+    "/reports": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE"
+    ],
+    "/reports/demand-attendance": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE"
+    ],
+    "/reports/travels": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE"
+    ],
+    "/reports/demands-by-units": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE"
+    ],
+    "/reports/demands-by-courses": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE"
+    ],
+    "/reports/indications-by-units": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE"
+    ],
+    "/reports/indications-by-course": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE"
+    ],
+    "/reports/most-demands-disciplines": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE"
+    ],
+    "/reports/attendance-by-units": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE"
+    ],
+    "/reports/professors-most-contributors": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE"
+    ],
+    "/certificate": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DOCENTE"
+    ],
+    "/profile": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE",
+        "DOCENTE"
+    ],
+    "/travel-register": [
+        "COORDENADOR",
+        "DIAVE"
+    ],
+    "/travel-edit/:id": [
+        "COORDENADOR",
+        "DIAVE"
+    ],
+    "/travel-list": [
+        "COORDENADOR",
+        "DIRETOR",
+        "DIAVE",
+        "DOCENTE"
+    ]
+}
