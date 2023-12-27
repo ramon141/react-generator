@@ -21,7 +21,7 @@ async function put(id, data) {
 }
 
 function del(id) {
-    return api.delete(`""" + path[6]['url'].replace('{id}/', '') + """/${id}`);
+    return api.delete(`""" + path[0]['url'] + """/${id}`);
 }
 
 export const """ + model.get_name().capitalize() + """API = {

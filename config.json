@@ -2,96 +2,9 @@
     "datasource": "Postgres",
     "path": "/home/ramon/my_projects/create_crud/netflix",
     "app_name": "netflix",
-    "auth": {
-        "type": "Criar autorização simples",
-        "profiles": []
-    },
+    "auth": {},
     "models": [
         {
-            "name": "Teste",
-            "base": "Entity",
-            "properties": {
-                "id": {
-                    "type": "number",
-                    "id": true,
-                    "required": false,
-                    "generated": true
-                },
-                "nome": {
-                    "type": "string",
-                    "id": false,
-                    "required": true,
-                    "generated": null
-                }
-            }
-        },
-        {
-            "name": "Teste",
-            "base": "Entity",
-            "properties": {
-                "id": {
-                    "type": "number",
-                    "id": true,
-                    "required": false,
-                    "generated": true
-                },
-                "nome": {
-                    "type": "string",
-                    "id": false,
-                    "required": true,
-                    "generated": null
-                }
-            }
-        },
-        {
-            "name": "Testando",
-            "base": "Entity",
-            "properties": {
-                "id": {
-                    "type": "number",
-                    "id": true,
-                    "required": false,
-                    "generated": true
-                }
-            }
-        },
-        {
-            "name": "Testando",
-            "base": "Entity",
-            "properties": {
-                "id": {
-                    "type": "number",
-                    "id": true,
-                    "required": false,
-                    "generated": true
-                }
-            }
-        },
-        {
-            "name": "Ola",
-            "base": "Entity",
-            "properties": {
-                "id": {
-                    "type": "number",
-                    "id": true,
-                    "required": false,
-                    "generated": true
-                }
-            }
-        },
-        {
-            "name": "Ola",
-            "base": "Entity",
-            "properties": {
-                "id": {
-                    "type": "number",
-                    "id": true,
-                    "required": false,
-                    "generated": true
-                }
-            }
-        },
-        {
             "name": "Filme",
             "base": "Entity",
             "properties": {
@@ -107,13 +20,13 @@
                     "required": true,
                     "generated": null
                 },
-                "poster": {
-                    "type": "string",
+                "nota": {
+                    "type": "number",
                     "id": false,
                     "required": true,
                     "generated": null
                 },
-                "nota": {
+                "poster": {
                     "type": "string",
                     "id": false,
                     "required": true,
@@ -122,7 +35,7 @@
                 "sinopse": {
                     "type": "string",
                     "id": false,
-                    "required": true,
+                    "required": false,
                     "generated": null
                 }
             }
@@ -143,13 +56,13 @@
                     "required": true,
                     "generated": null
                 },
-                "poster": {
-                    "type": "string",
+                "nota": {
+                    "type": "number",
                     "id": false,
                     "required": true,
                     "generated": null
                 },
-                "nota": {
+                "poster": {
                     "type": "string",
                     "id": false,
                     "required": true,
@@ -158,7 +71,7 @@
                 "sinopse": {
                     "type": "string",
                     "id": false,
-                    "required": true,
+                    "required": false,
                     "generated": null
                 }
             }
