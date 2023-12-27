@@ -23,6 +23,11 @@ pip install questionary
 pip install tqdm
 ```
 
+Além de outras dependências globais do Node:
+```bash
+npm install -g @loopback/cli@5.2.2
+```
+
 ## Como Usar
 Forneça instruções de como configurar e usar a aplicação. Inclua etapas para instalação de dependências, configuração do ambiente e comandos para iniciar a aplicação.
 

@@ -12,7 +12,7 @@ async function post(data) {
 
 function get(id = false) {
     if (id)
-        return api.get(`""" + path[4]['url'].replace('{id}/', '') + """/${id}`);
+        return api.get(`""" + path[4]['url'].replace('/{id}', '') + """/${id}`);
     return api.get('""" + path[2]['url'] + """');
 }
 
@@ -21,7 +21,7 @@ async function put(id, data) {
 }
 
 function del(id) {
-    return api.delete(`""" + path[6]['url'].replace('{id}/', '') + """/${id}`);
+    return api.delete(`""" + path[6]['url'].replace('/{id}', '') + """/${id}`);
 }
 
 export const """ + model.get_name().capitalize() + """API = {

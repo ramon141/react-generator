@@ -10,19 +10,16 @@ def create_sidebar(model: Model):
     name: '""" + model.get_name().capitalize() +"""',
     to: '#',
     icon: <FaChartBar className="nav-icon" />,
-    roles: routesPermissions['/travel-register'],
     items: [
       {
         component: CNavItem,
         name: 'Cadastrar',
         to: '/register-""" + model.get_name().lower() +"""',
-        roles: routesPermissions['/travel-register'],
       },
       {
         component: CNavItem,
         name: 'Listar',
         to: '/list-""" + model.get_name().lower() +"""',
-        roles: routesPermissions['/travel-list'],
       },
     ]
   },

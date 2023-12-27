@@ -1,6 +1,6 @@
 {
     "datasource": "Postgres",
-    "path": "/home/ramon/my_projects/create_crud/netflix",
+    "path": "/home/midias/Ramon/react-generator/netflix",
     "app_name": "netflix",
     "auth": {
         "type": "Criar autorização simples",
@@ -156,6 +156,42 @@
                     "generated": null
                 },
                 "sinopse": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                }
+            }
+        },
+        {
+            "name": "Filme",
+            "base": "Entity",
+            "properties": {
+                "id": {
+                    "type": "number",
+                    "id": true,
+                    "required": false,
+                    "generated": true
+                },
+                "nome": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                }
+            }
+        },
+        {
+            "name": "Filme",
+            "base": "Entity",
+            "properties": {
+                "id": {
+                    "type": "number",
+                    "id": true,
+                    "required": false,
+                    "generated": true
+                },
+                "nome": {
                     "type": "string",
                     "id": false,
                     "required": true,
