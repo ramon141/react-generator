@@ -56,5 +56,5 @@ def migrate():
 
 
 def install_libs(libs, param = ''):
-    install_cmd = "cd {} && lb4 i {} ".format(Log.get_api_path(), param, ' '.join(libs))
+    install_cmd = "cd {} && npm i {} {}".format(Log.get_api_path(), param, ' '.join(libs))
     subprocess.run(install_cmd, check=True, shell=True)

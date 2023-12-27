@@ -6,7 +6,7 @@ from classes.Model import Model
 
 def init():
     configure() # Instala as bibliotecas
-    create_crud_user() # Cria o model/repository/controller user
+    create_crud_user() # Cria o model/repository/controller users
     
 
 def configure():
@@ -28,6 +28,7 @@ def create_crud_user() -> Model:
     model: Model = create_model_user()
     lb4.repository(model.get_name())
     create_controller_user(model.get_name())
+
     lb4.migrate()
     return model
 
@@ -39,5 +40,5 @@ def create_model_user() -> Model:
 
 
 def create_controller_user(model_name):
-    create_cmd = "cd {}; lb4 controller {} --typeController basic".format(Log.get_api_path(), model_name)
+    create_cmd = "cd {}; lb4 controller {} --typeController basic -y".format(Log.get_api_path(), model_name)
     subprocess.run(create_cmd, check=True, shell=True)

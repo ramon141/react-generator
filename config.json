@@ -3,12 +3,15 @@
     "path": "/home/midias/Ramon/react-generator/netflix",
     "app_name": "netflix",
     "auth": {
-        "type": "Criar autorização simples",
-        "profiles": []
+        "type": "Criar autorização com níveis de acesso",
+        "profiles": [
+            "ADMIN",
+            "READ"
+        ]
     },
     "models": [
         {
-            "name": "Teste",
+            "name": "Filme",
             "base": "Entity",
             "properties": {
                 "id": {
@@ -26,7 +29,7 @@
             }
         },
         {
-            "name": "Teste",
+            "name": "Filme",
             "base": "Entity",
             "properties": {
                 "id": {
@@ -40,54 +43,6 @@
                     "id": false,
                     "required": true,
                     "generated": null
-                }
-            }
-        },
-        {
-            "name": "Testando",
-            "base": "Entity",
-            "properties": {
-                "id": {
-                    "type": "number",
-                    "id": true,
-                    "required": false,
-                    "generated": true
-                }
-            }
-        },
-        {
-            "name": "Testando",
-            "base": "Entity",
-            "properties": {
-                "id": {
-                    "type": "number",
-                    "id": true,
-                    "required": false,
-                    "generated": true
-                }
-            }
-        },
-        {
-            "name": "Ola",
-            "base": "Entity",
-            "properties": {
-                "id": {
-                    "type": "number",
-                    "id": true,
-                    "required": false,
-                    "generated": true
-                }
-            }
-        },
-        {
-            "name": "Ola",
-            "base": "Entity",
-            "properties": {
-                "id": {
-                    "type": "number",
-                    "id": true,
-                    "required": false,
-                    "generated": true
                 }
             }
         },
@@ -114,7 +69,7 @@
                     "generated": null
                 },
                 "nota": {
-                    "type": "string",
+                    "type": "number",
                     "id": false,
                     "required": true,
                     "generated": null
@@ -122,7 +77,7 @@
                 "sinopse": {
                     "type": "string",
                     "id": false,
-                    "required": true,
+                    "required": false,
                     "generated": null
                 }
             }
@@ -150,7 +105,7 @@
                     "generated": null
                 },
                 "nota": {
-                    "type": "string",
+                    "type": "number",
                     "id": false,
                     "required": true,
                     "generated": null
@@ -158,13 +113,13 @@
                 "sinopse": {
                     "type": "string",
                     "id": false,
-                    "required": true,
+                    "required": false,
                     "generated": null
                 }
             }
         },
         {
-            "name": "Filme",
+            "name": "User",
             "base": "Entity",
             "properties": {
                 "id": {
@@ -173,25 +128,19 @@
                     "required": false,
                     "generated": true
                 },
-                "nome": {
+                "email": {
                     "type": "string",
                     "id": false,
                     "required": true,
                     "generated": null
-                }
-            }
-        },
-        {
-            "name": "Filme",
-            "base": "Entity",
-            "properties": {
-                "id": {
-                    "type": "number",
-                    "id": true,
-                    "required": false,
-                    "generated": true
                 },
-                "nome": {
+                "profile": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                },
+                "password": {
                     "type": "string",
                     "id": false,
                     "required": true,
