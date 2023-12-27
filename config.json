@@ -1,6 +1,6 @@
 {
     "datasource": "Postgres",
-    "path": "/home/ramon/my_projects/create_crud/netflix",
+    "path": "/home/midias/Ramon/react-generator/netflix",
     "app_name": "netflix",
     "auth": {},
     "models": [

@@ -7,6 +7,7 @@ import cli.permissions_ask as cli_permissions_ask
 import generators.loopback.read_code.paths as lb4_paths
 import generators.utils.create_permissions as permissions
 import generators.loopback.main as lb4
+import generators.auth as auth
 
 
 def init(app_name):
@@ -32,8 +33,8 @@ def add_authorization():
     Log.set_type_auth(auth_option)
     Log.set_profiles(user_types)
 
-    model = lb4.add_authorization()
-    react.rest(model)
+    auth.init()
+    
 
 
 def alter_permissions():
@@ -44,7 +45,7 @@ def alter_permissions():
 
 
 def start():
-    back_start_cmd = "cd {} && export PORT=3000 &&  npm start &".format(Log.get_api_path())
+    back_start_cmd = "cd {} && export PORT=3000 && npm start &".format(Log.get_api_path())
     web_start_cmd = "cd {} && export PORT=3002 && npm start".format(Log.get_web_path())
     
     subprocess.run(back_start_cmd, shell=True)

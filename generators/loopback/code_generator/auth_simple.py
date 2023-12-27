@@ -47,7 +47,7 @@ def add_config_application(code):
     return code.replace(search, search + "\n" + snippet)
 
 
-def add_auth_configurations():
+def init():
     with open('{}/src/application.ts'.format(Log.get_api_path()), 'r') as f:
         code = f.read()
 
@@ -56,3 +56,5 @@ def add_auth_configurations():
 
     with open('{}/src/application.ts'.format(Log.get_api_path()), 'w') as f:
         f.write(code)
+
+        

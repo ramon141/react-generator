@@ -14,12 +14,12 @@ def create_sidebar(model: Model):
       {
         component: CNavItem,
         name: 'Cadastrar',
-        to: '/register-""" + model.get_name().lower() +"""'
+        to: '/register-""" + model.get_name().lower() +"""',
       },
       {
         component: CNavItem,
         name: 'Listar',
-        to: '/list-""" + model.get_name().lower() +"""'
+        to: '/list-""" + model.get_name().lower() +"""',
       },
     ]
   },
