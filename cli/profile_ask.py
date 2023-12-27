@@ -14,6 +14,7 @@ def questionare():
         print("Você deverá preencher o model abaixo com as informações que deseja que o usuário tenha. "
               "Um atributo 'password' será criado automaticamente e você deverá informar o outro atributo "
               "que desejar para permitir a autorização, como um: name, username, email, cpf, etc...")
+        auth_option_value = "simple"
 
     elif auth_option == "Criar autorização com níveis de acesso":
         while True:
@@ -28,5 +29,6 @@ def questionare():
               "Serão adicionados ao modelo automaticamente um atributo 'password' e 'role'. No final você "
               "deverá informar um outro atributo que desejar para permitir a autorização, como um: "
               "name, username, email, cpf, etc...")
-        
-    return auth_option, user_types
+        auth_option_value = "with_roles"
+ 
+    return auth_option_value, user_types
