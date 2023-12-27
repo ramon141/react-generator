@@ -9,7 +9,7 @@ from .loopback.code_generator.auth_simple import init as auth_simple
 def init():
     configure() # Instala as bibliotecas
     model = create_crud_user() # Cria o model/repository/controller users
-    credential = input('Digite o nome do atributo que deseja utilizar para combinar com a senha (username, email, name, cpf, etc)...')
+    credential = input('Digite o nome do atributo que deseja utilizar para combinar com a senha (username, email, name, cpf, etc)...: ')
     auth_simple(model, credential)
     
 

@@ -17,7 +17,7 @@ def rest(model):
 
 def create_react_app():
     print("Copiando template do sistema web")
-    copy_tree('template', Log.get_web_path(), dirs_exist_ok=True)
+    copy_tree('template/frontend', Log.get_web_path(), dirs_exist_ok=True)
     install_libs_cmd = 'cd {} && npm install'.format(Log.get_web_path())
     print("Rodando npm install")
     return subprocess.run(install_libs_cmd, shell=True, capture_output=True, text=True).stdout

@@ -1,11 +1,14 @@
 {
-    "datasource": "Postgres",
-    "path": "/home/midias/Ramon/react-generator/netflix",
+    "datasource": null,
+    "path": "/home/ramon/my_projects/create_crud/netflix",
     "app_name": "netflix",
-    "auth": {},
+    "auth": {
+        "type": "simple",
+        "profiles": []
+    },
     "models": [
         {
-            "name": "Filme",
+            "name": "User",
             "base": "Entity",
             "properties": {
                 "id": {
@@ -14,34 +17,22 @@
                     "required": false,
                     "generated": true
                 },
-                "nome": {
+                "email": {
                     "type": "string",
                     "id": false,
                     "required": true,
                     "generated": null
                 },
-                "nota": {
-                    "type": "number",
-                    "id": false,
-                    "required": true,
-                    "generated": null
-                },
-                "poster": {
+                "password": {
                     "type": "string",
                     "id": false,
                     "required": true,
-                    "generated": null
-                },
-                "sinopse": {
-                    "type": "string",
-                    "id": false,
-                    "required": false,
                     "generated": null
                 }
             }
         },
         {
-            "name": "Filme",
+            "name": "User",
             "base": "Entity",
             "properties": {
                 "id": {
@@ -50,28 +41,141 @@
                     "required": false,
                     "generated": true
                 },
-                "nome": {
+                "email": {
                     "type": "string",
                     "id": false,
                     "required": true,
                     "generated": null
                 },
-                "nota": {
+                "password": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                }
+            }
+        },
+        {
+            "name": "User",
+            "base": "Entity",
+            "properties": {
+                "id": {
+                    "type": "number",
+                    "id": true,
+                    "required": false,
+                    "generated": true
+                },
+                "email": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                },
+                "password": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                }
+            }
+        },
+        {
+            "name": "User",
+            "base": "Entity",
+            "properties": {
+                "id": {
+                    "type": "number",
+                    "id": true,
+                    "required": false,
+                    "generated": true
+                },
+                "email": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                },
+                "password": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                }
+            }
+        },
+        {
+            "name": "id",
+            "base": "Entity",
+            "properties": {
+                "id": {
+                    "type": "number",
+                    "id": true,
+                    "required": false,
+                    "generated": true
+                },
+                "email": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                },
+                "password": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                }
+            }
+        },
+        {
+            "name": "",
+            "base": null,
+            "properties": {}
+        },
+        {
+            "name": "User",
+            "base": "Entity",
+            "properties": {
+                "id": {
+                    "type": "number",
+                    "id": true,
+                    "required": false,
+                    "generated": true
+                },
+                "email": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                },
+                "password": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                }
+            }
+        },
+        {
+            "name": "User",
+            "base": "Entity",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "id": true,
+                    "required": false,
+                    "generated": true
+                },
+                "email": {
                     "type": "number",
                     "id": false,
                     "required": true,
                     "generated": null
                 },
-                "poster": {
+                "password": {
                     "type": "string",
                     "id": false,
                     "required": true,
-                    "generated": null
-                },
-                "sinopse": {
-                    "type": "string",
-                    "id": false,
-                    "required": false,
                     "generated": null
                 }
             }
