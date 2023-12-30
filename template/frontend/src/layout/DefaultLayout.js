@@ -8,8 +8,7 @@ const DefaultLayout = () => {
 
   useEffect(() => reloadInformations(), [])
 
-  // if (!isAuthenticable())
-  //   return <Navigate to="/" />
+  //Add auth
 
   return (
     <div>

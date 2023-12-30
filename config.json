@@ -1,5 +1,5 @@
 {
-    "datasource": null,
+    "datasource": "Postgres",
     "path": "/home/ramon/my_projects/create_crud/netflix",
     "app_name": "netflix",
     "auth": {
@@ -170,6 +170,48 @@
                     "type": "number",
                     "id": false,
                     "required": true,
+                    "generated": null
+                },
+                "password": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                }
+            }
+        },
+        {
+            "name": "User",
+            "base": "Entity",
+            "properties": {
+                "id": {
+                    "type": "number",
+                    "id": true,
+                    "required": false,
+                    "generated": true
+                },
+                "email": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                },
+                "password": {
+                    "type": "string",
+                    "id": false,
+                    "required": true,
+                    "generated": null
+                }
+            }
+        },
+        {
+            "name": "User",
+            "base": "Entity",
+            "properties": {
+                "id": {
+                    "type": null,
+                    "id": null,
+                    "required": null,
                     "generated": null
                 },
                 "password": {

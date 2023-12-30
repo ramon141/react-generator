@@ -46,7 +46,6 @@ const CredentialsSchema: SchemaObject = {
     properties: {
         credential_pair: {
             type: 'string',
-            format: 'credential_pair_format',
         },
         password: {
             type: 'string',

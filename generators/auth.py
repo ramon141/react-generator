@@ -3,14 +3,16 @@ from .loopback import main as lb4
 from generators.loopback.cli import main as cli
 import subprocess
 from classes.Model import Model
-from .loopback.code_generator.auth_simple import init as auth_simple
+from .loopback.code_generator.auth_simple import init as auth_simple_lb4
+from .react.code_generator.create.auth_simple import init as auth_simple_react
 
 
 def init():
     configure() # Instala as bibliotecas
     model = create_crud_user() # Cria o model/repository/controller users
     credential = input('Digite o nome do atributo que deseja utilizar para combinar com a senha (username, email, name, cpf, etc)...: ')
-    auth_simple(model, credential)
+    auth_simple_lb4(model, credential)
+    auth_simple_react()
     
 
 def configure():

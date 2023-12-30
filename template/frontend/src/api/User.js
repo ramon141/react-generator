@@ -49,7 +49,7 @@ function login({ email, password }) {
         password
     };
 
-    return api.post('/api/login', data);
+    return api.post('/users/login', data);
 }
 
 async function post(data) {
