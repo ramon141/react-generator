@@ -8,8 +8,22 @@
     },
     "permissions": {
         "User": {
-            "create": true,
-            "list_all": true
+            "create": {
+                "value": true,
+                "front_url": "",
+                "back_url": {
+                    "method": "POST",
+                    "url": "/users/login"
+                }
+            },
+            "list_all": {
+                "value": false,
+                "front_url": "",
+                "back_url": {
+                    "method": "GET",
+                    "url": "/whoAmI"
+                }
+            }
         }
     },
     "models": [

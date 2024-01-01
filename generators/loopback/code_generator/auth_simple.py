@@ -1,6 +1,7 @@
 from log import Log
 from classes.Model import Model
 import re
+from classes.Permissions import Permissions
 
 def add_imports(code):
     search_regex = r"import { ?MySequence ?} from '\./sequence';"
@@ -58,6 +59,13 @@ def controller_user(model: Model, credential):
 
     with open('{}/src/controllers/{}.controller.ts'.format(Log.get_api_path(), model.get_name().lower()), 'w') as f:
           f.write(code)
+
+
+
+# def add_auth_on_routes(permissions: Permissions):
+
+
+
 
 
 def init(model: Model, credential):

@@ -10,14 +10,21 @@ class Action:
     action: str
     description: str
     restriction: list | bool
+    back_url: Path
+    front_url: str
 
-    def __init__(self, action: str, description: str) -> None:
+
+    def __init__(self, action: str, description: str, back_url: Path, front_url: str = '') -> None:
         self.action = action
         self.description = description
         self.restriction = False
+        self.back_url = back_url
+        self.front_url = front_url
+
 
     def set_restriction(self, restriction: list | bool) -> None:
         self.restriction = restriction
+
 
     def get_restriction_label(self) -> str:
         if isinstance(self.restriction, bool):
@@ -49,11 +56,9 @@ class Permission:
 
 
     # Atualiza a ação com a restrição dada ou cria uma ação com a restrição dada
-    def update_or_create_action(self, action: str, restriction: list | bool) -> None:
-        temp_action = self.get_action_from_message(action)
-        print(temp_action.description)
-
-        action = [d for d in self.actions if action == d.action]
+    def update_or_create_action(self, path: Path, restriction: list | bool) -> None:
+        temp_action = self.get_action(path)
+        action = [d for d in self.actions if temp_action.action == d.action]
         
         if len(action) == 0: # Não existe
             temp_action.restriction = restriction
@@ -62,20 +67,23 @@ class Permission:
             action[0].restriction = restriction
 
 
-    def get_action_from_message(self, action: str) -> Action | None:
-        message = {
-            'unique_item': 'Acesso a um item único',
-            'count': 'Contar quantidade de itens',
-            'list_all': 'Listar todos os registros',
-            'create': 'Criar registros',
-            'delete': 'Deletar registros',
-            'update': 'Atualizar por completo',
-            'partial_update': 'Atualização de dados parcial',
-        }
-        if action not in message:
-            return None
-        
-        return Action(action, message[action])
+
+    def get_action(self, path: Path) -> Action:
+        if path.get_method() == 'GET':
+            if "{id}" in path.get_path():
+                return Action('unique_item', 'Acesso a um item único', path)
+            elif 'count' in path.get_path():
+                return Action('count', 'Contar quantidade de itens', path)
+            else:
+                return Action('list_all', 'Listar todos os registros', path)
+        elif path.get_method() == 'POST':
+            return Action('create', 'Criar registros', path)
+        elif path.get_method() == 'DELETE':
+            return Action('delete', 'Deletar registros', path)
+        elif path.get_method() == 'PUT':
+            return Action('update', 'Atualizar por completo', path)
+        elif path.get_method() == 'PATCH':
+            return Action('partial_update', 'Atualização de dados parcial', path)
     
     
 
@@ -114,7 +122,8 @@ class Permissions(List[Permission]):
 
         for key, permission in permissions.items():
             for action, value in permission.items():
-                result.add_permission(key, action, value)
+                path = Path(value['back_url']['url'], value['back_url']['method'])
+                result.add_permission(key, path, value['value'])
 
         if len(result) == 0:
             return None
@@ -122,12 +131,9 @@ class Permissions(List[Permission]):
         return result
 
 
-    def add_permission(self, model_name: str, action: str | Path, restriction: list | bool) -> None:
+    def add_permission(self, model_name: str, path: Path, restriction: list | bool) -> None:
         permission = self.find_or_create(model_name)
-        if isinstance(action, str):
-            permission.update_or_create_action(action, restriction)
-        else:
-            permission.update_or_create_action(self.get_action(action), restriction)
+        permission.update_or_create_action(path, restriction)
 
 
     def get_action(self, path: Path) -> str:
@@ -170,8 +176,15 @@ class Permissions(List[Permission]):
         res = {}
         for permission in self:
             res[permission.get_model_name()] = {}
-            for actions in permission.actions:
-                res[permission.get_model_name()][actions.action] = actions.restriction
+            for action in permission.actions:
+                res[permission.get_model_name()][action.action] = {
+                    'value': action.restriction,
+                    'front_url': action.front_url,
+                    'back_url': {
+                        'method': action.back_url.get_method(),
+                        'url': action.back_url.get_path(),
+                    }
+                }
 
         Log.set_permissions(res)
     
