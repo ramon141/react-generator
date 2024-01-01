@@ -20,18 +20,31 @@ class Log:
             "path": "",
             "app_name": "",
             "auth": {},
-            "models": []
+            "models": [],
+            "permissions": {}
         }
         with open('config.json', 'w', encoding='utf-8') as f:
             json.dump(Log.logger, f, ensure_ascii=False, indent=4)
 
+    def get_models() -> dict:
+        return Log.logger["models"]
+    
+    def get_model(name: str) -> Model | None:
+        res = [d for d in Log.get_models() if d['name'] == name]
+        if len(res) == 0:
+            return None
+        return Model.from_dict(res[0])
+
     def set_permissions(permissions):
         Log.write_file("permissions", permissions)
+
+    def get_permissions():
+        return Log.logger["permissions"]
 
     def get_profiles():
         return Log.logger["auth"]["profiles"]
 
-    def get_type_auth():
+    def get_type_auth() -> str:
         return Log.logger["auth"]["type"]
     
     def set_profiles(profiles):

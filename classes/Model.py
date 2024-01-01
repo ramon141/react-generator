@@ -48,9 +48,13 @@ class Model:
         }
 
     @staticmethod
-    def from_json(json_data):
-        model_data = json.loads(json_data)
+    def from_dict(model_data: dict):
         model = Model(model_data["name"], model_data["base"])
+
         for name, prop_data in model_data["properties"].items():
-            model.add_property(name, **prop_data)
+            required = True if 'required' in prop_data and prop_data['required'] else False
+            is_id = True if 'id' in prop_data and prop_data['id'] else False
+            generated = True if 'generated' in prop_data and prop_data['generated'] else False
+
+            model.add_property(name, prop_data['type'], required, is_id, generated)
         return model

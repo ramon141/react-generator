@@ -39,9 +39,10 @@ def add_authorization():
 
 def alter_permissions():
     paths = lb4_paths.get_paths()
-    model, route, method, roles = cli_permissions_ask.permission_questionnaire(paths)
-    new_permissions = permissions.create_permissions(paths, model, route, method, roles)
-    Log.set_permissions(new_permissions)
+    cli_permissions_ask.permission_questionnaire_simple(paths)
+    # model, route, method, roles = cli_permissions_ask.permission_questionnaire_complex(paths)
+    # new_permissions = permissions.create_permissions(paths, model, route, method, roles)
+    # Log.set_permissions(new_permissions)
 
 
 def start():
