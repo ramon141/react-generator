@@ -61,11 +61,34 @@ def controller_user(model: Model, credential):
           f.write(code)
 
 
+def get_controller_code(model_name) -> str:
+    with open('{}/src/controllers/{}.controller.ts'.format(Log.get_api_path(), model_name).lower(), 'r') as f:
+        code = f.read()
+    return code
 
-# def add_auth_on_routes(permissions: Permissions):
+def save_controller_code(model_name, code):
+    with open('{}/src/controllers/{}.controller.ts'.format(Log.get_api_path(), model_name).lower(), 'w') as f:
+        f.write(code)
 
 
+def update_auth_on_routes(permissions: Permissions):
+    for permission in permissions:
+        code = get_controller_code(permission.get_model_name())
+        code = code.replace("@authenticate('jwt')", '')
 
+        for action in permission.actions:
+            path = action.back_url
+            
+            if action.restriction != False:
+                code = add_auth(code, path)
+
+        save_controller_code(permission.get_model_name(), code)
+
+def add_auth(code, path):
+    snippet = "@authenticate('jwt')"
+    search = "@{}('{}'".format(path.get_method().lower(), path.get_path())
+    code = code.replace(search, snippet + '\n' + search)
+    return code
 
 
 def init(model: Model, credential):

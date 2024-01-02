@@ -3,8 +3,6 @@ from typing import List
 from log import Log
 from classes.Controllers import Path, Controllers
 from prettytable import PrettyTable
-from typing import overload
-
 
 class Action:
     action: str
@@ -89,9 +87,9 @@ class Permission:
 
     def __str__(self) -> str:
         table = PrettyTable()
-        table.field_names = ["Model", "Ação", "Privado"]
+        table.field_names = ["Model", "Ação", "Rota API", "Privado"]
         for action in self.actions:
-            table.add_row([self.model.get_name(), action.description, str(action.restriction)])
+            table.add_row([self.model.get_name(), action.description, action.back_url.get_path(), str(action.restriction)])
         return table.get_string()
 
 
@@ -173,6 +171,14 @@ class Permissions(List[Permission]):
     
 
     def confirm(self) -> dict:
+        self.write_file()
+        
+        #Evita a importação circular
+        from generators.loopback.code_generator.auth_simple import update_auth_on_routes as add_permission_lb4
+        add_permission_lb4(self)
+
+
+    def write_file(self):
         res = {}
         for permission in self:
             res[permission.get_model_name()] = {}
@@ -187,14 +193,16 @@ class Permissions(List[Permission]):
                 }
 
         Log.set_permissions(res)
+
+        
     
 
     def __str__(self) -> str:
         table = PrettyTable()
-        table.field_names = ["Model", "Ação", "Privado"]
+        table.field_names = ["Model", "Ação", "Rota API", "Privado"]
         for permission in self:
             for idx in range(len(permission.actions)):
                 action = permission.actions[idx]
-                table.add_row([permission.model.get_name(), action.description, str(action.restriction)], divider=idx == len(permission.actions) - 1)
+                table.add_row([permission.model.get_name(), action.description, action.back_url.get_path(), str(action.restriction)], divider=idx == len(permission.actions) - 1)
 
         return table.get_string()

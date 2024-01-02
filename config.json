@@ -17,7 +17,7 @@
                 }
             },
             "list_all": {
-                "value": false,
+                "value": true,
                 "front_url": "",
                 "back_url": {
                     "method": "GET",
